@@ -1,6 +1,6 @@
 # DPMA_lab_3
 
-Celem ćwiczenia jest zbadanie własności układów formowania wiązek.
+Celem ćwiczenia jest zbadanie własności sygnałów posiadających przesunięcie dopplerowskie.
 
 ## Dostępne funkcje:
 
@@ -23,7 +23,7 @@ distVector - wektor pozwalający przekonwertować indeks na odległość.
 
 ## Zadania do realizacji
 
-1. Zbadaj zachowanie przetwarzania nikoherentnego (proste sumowanie danych z wszystkich dostępnych impulsów bez ich wyrównywania w fazie czy opóźnieniu).
+1. Zbadaj zachowanie przetwarzania niekoherentnego (proste sumowanie danych z wszystkich dostępnych impulsów bez ich wyrównywania w fazie czy opóźnieniu).
 Użyj do tego celu uproszczonego modelu kanału dopplerowskiego.
 Jak zachowuje się echo dla braku, a jak przy maksymalnej prędkości radialnej.
 Co dzieje się z echem sygnału po przekroczeniu maksymalnej jednoznacznej prędkości radialnej?

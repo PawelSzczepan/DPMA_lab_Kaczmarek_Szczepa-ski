@@ -1,6 +1,6 @@
 # DPMA_lab_3
 
-The purpose of the exercise is to study the properties of beamforming systems.
+The purpose of the exercise is to study the properties of signals having a Doppler shift.
 
 ## Available functions:
 
