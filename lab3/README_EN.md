@@ -21,6 +21,23 @@ rxSignal=channelOutput_better(inputSignal, target) - function taking transmitted
 pulses - matrix of dimension cfg.M x cfg.pulseSamplesNo (number of pulses x their length) with signals grouped into pulses
 distVector - a vector to convert index to distance.
 
+## Doppler filtration
+
+After the operation:
+
+> txSignal=getTxSignal();
+> rxSignal=channelOutput_simple(txSignal,getTarget());
+> [pulses,distVector]=pulseCompression(rxSignal);
+
+The 'pulses' array is 'cfg.M' x 'cfg.pulseSamplesNo', where 'cfg.M' is the number of probes and 'cfg.pulseSamplesNo' is the number of distance cells.
+Doppler filtering should be performed with a set of K filters.
+The number of filters can be any, including more than the 'cfg.M' value.
+The filtering, as an FIR filter, can be performed as a multiplication of the filter matrix ('M_f'), which will have the dimension 'K' x 'cfg.M'.
+As a result, the filtered signal should be an 'S_{MTD}' matrix of dimension 'K' x 'cfg.pulseSamplesNo'.
+
+In the case of 'manual' filtering, it should be done for each column of the 'pulses' matrix.
+As a result, the largest value (as to modulus) of the signal should occur for the distance cell in which the object is located, and for the filter to which the Doppler shift corresponds.
+
 ## Tasks to be performed
 
 1 Investigate the behavior of nikoherent processing (simple summation of data from all available pulses without their alignment in phase or delay).

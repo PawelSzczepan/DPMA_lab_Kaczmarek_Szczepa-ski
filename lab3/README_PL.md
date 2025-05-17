@@ -21,6 +21,24 @@ rxSignal=channelOutput_better(inputSignal, target) - funkcja pobierająca sygna�
 pulses - macierz o wymiarze cfg.M x cfg.pulseSamplesNo (liczba impulsów x ich długość) z sygnałami pogrupowanymi w impulsy
 distVector - wektor pozwalający przekonwertować indeks na odległość.
 
+## Filtracja dopplerowska
+
+Po wykonaniu operacji:
+
+> txSignal=getTxSignal();
+> rxSignal=channelOutput_simple(txSignal,getTarget());
+> [pulses, distVector]=pulseCompression(rxSignal);
+
+macierz 'pulses' ma rozmiar 'cfg.M' x 'cfg.pulseSamplesNo', gdzie 'cfg.M' oznacza liczbę sondowań, a 'cfg.pulseSamplesNo' jest liczbą komórek odległościowych.
+Filtrację dopplerowską należy wykonać z użyciem zestawu K filtrów.
+Liczba filtrów może być dowolna, także większa od wartości 'cfg.M'.
+Filtrację, jako filtr FIR można wykonać w postaci mnożenia macierzy filtrów ('M_f'), która będzie miała wymiar 'K' x 'cfg.M'.
+W efekcie, przefiltrowany sygnał powinien być macierzą 'S_{MTD}' o wymiarze 'K' x 'cfg.pulseSamplesNo'.
+
+W przypadku 'ręcznej' filtracji, należy ją wykonać dla każdej kolumny macierzy 'pulses'.
+W efekcie, największa wartość (co do modułu) sygnału powinna występować dla komórki odległościowej w której znajduje się obiekt, oraz dla filtru, któremu odpowiada przesunięcie dopplerowskie.
+
+
 ## Zadania do realizacji
 
 1. Zbadaj zachowanie przetwarzania niekoherentnego (proste sumowanie danych z wszystkich dostępnych impulsów bez ich wyrównywania w fazie czy opóźnieniu).
