@@ -1,0 +1,13 @@
+cfg = getConfig();
+
+txSignal=getTxSignal();
+rxSignal=channelOutput_simple(txSignal,getTarget());
+[pulses, distVector]=pulseCompression(rxSignal);
+
+tiledlayout("vertical");
+
+for n = 1:cfg.M
+
+    nexttile
+    pulses(distVector, pulses(n,:));
+end

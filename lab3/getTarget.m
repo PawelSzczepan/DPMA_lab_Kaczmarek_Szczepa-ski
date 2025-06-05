@@ -1,6 +1,7 @@
 function obj=getTarget()
-    obj.targetsNo=1; % number of targets
-    obj.v=[0]; % target velocity [m/s]
-    obj.r=[5e3]; % targed distance [m]
+    cfg = getConfig();
+    obj.targetsNo=2; % number of targets
+    obj.v=[0, 0.925*cfg.v_max]; % target velocity [m/s]
+    obj.r=[5e3, 15e3]; % targed distance [m]
 end
 

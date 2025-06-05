@@ -1,8 +1,8 @@
 cfg = getConfig();
 
-duration = 10e-3;
-fl = 100;
-fh = 1000;
+duration = 12e-3;
+fl = 1000;
+fh = 10000;
 
 x = getChirp(fl, fh, duration);
 
@@ -17,3 +17,4 @@ l = duration*cfg.Fs;
 plot(cfg.Fs/l*(-l/2:l/2-1),abs(fftshift(X)))
 xlabel("f [Hz]")
 ylabel("|fft(LMF)|")
+xlim([-2e4 2e4])
