@@ -1,7 +1,7 @@
 function cfg=getConfig()
     cfg.c=299792458;
     cfg.Fc=4e8; % carrier frequency
-    cfg.Fs=.1e6; % sampling frequency
+    cfg.Fs=2e6; % sampling frequency
     cfg.M=10; % number of consecutive pulses
     cfg.PRF=5000; % pulse repetition frequency
     cfg.pulseSamplesNo=round(cfg.Fs/cfg.PRF); % number of samples in single pulse
