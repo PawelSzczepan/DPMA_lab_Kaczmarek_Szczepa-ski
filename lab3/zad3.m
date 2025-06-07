@@ -4,7 +4,7 @@ cfg = getConfig();
 
 txSignal=getTxSignal();
 
-velocity_vec = [0 0.625*cfg.v_max]; 
+velocity_vec = [0 0.225*cfg.v_max]; 
 distance_vec = [5e3 15e3];
 
 txSignal = getTxSignal();
@@ -37,6 +37,7 @@ axis xy;
 
 yyaxis left;
 xlabel('Odległość [km]');
+imagesc(distVector*1e-3, dopplerVelocities, filteredSignal);
 ylabel('Prędkość dopplerowskia [m/s])');
 sgtitle('Filtracja MTD');
 colorbar;
